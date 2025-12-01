@@ -1,0 +1,182 @@
+========================================
+   SHADOWLINK RECONNAISSANCE REPORT
+========================================
+
+[+] === SYSTEM INFO ===
+[*] Commande executee (pas de sortie)
+
+[+] === CURRENT USER ===
+desktop-2m26j2m\tj_emilz
+
+[+] === CURRENT DIRECTORY ===
+C:\Users\efour\Documents\D√©veloppement\ShadowLink
+
+[+] === DIRECTORY LISTING ===
+ Le volume dans le lecteur C n‚Äôa pas de nom.
+ Le num√©ro de s√©rie du volume est A44E-C7AB
+
+ R√©pertoire de C:\Users\efour\Documents\D√©veloppement\ShadowLink
+
+01/12/2025  15:17    <DIR>          .
+01/12/2025  13:07    <DIR>          ..
+01/12/2025  13:07               349 .gitignore
+01/12/2025  15:35    <DIR>          agent
+01/12/2025  13:07    <DIR>          docs
+01/12/2025  13:07             1¬†561 Makefile
+01/12/2025  13:07             3¬†299 README.md
+01/12/2025  13:07    <DIR>          server
+01/12/2025  13:08    <DIR>          venv
+               3 fichier(s)            5¬†209 octets
+               6 R√©p(s)  155¬†757¬†617¬†152 octets libres
+
+[+] === NETWORK CONFIG ===
+
+Configuration IP de Windows
+
+   Nom de l'hìte . . . . . . . . . . : DESKTOP-2M26J2M
+   Suffixe DNS principal . . . . . . : 
+   Type de noeud. . . . . . . . . .  : Hybride
+   Routage IP activÇ . . . . . . . . : Non
+   Proxy WINS activÇ . . . . . . . . : Non
+   Liste de recherche du suffixe DNS.: tail2ccaa0.ts.net
+
+Carte Ethernet Ethernet :
+
+   Statut du mÇdia. . . . . . . . . . . . : MÇdia dÇconnectÇ
+   Suffixe DNS propre Ö la connexion. . . : home
+   Description. . . . . . . . . . . . . . : Realtek PCIe GbE Family Controller
+   Adresse physique . . . . . . . . . . . : D8-BB-C1-04-10-AF
+   DHCP activÇ. . . . . . . . . . . . . . : Oui
+   Configuration automatique activÇe. . . : Oui
+
+Carte inconnue Tailscaleˇ:
+
+   Suffixe DNS propre Ö la connexion. . . : tail2ccaa0.ts.net
+   Description. . . . . . . . . . . . . . : Tailscale Tunnel
+   Adresse physique . . . . . . . . . . . : 
+   DHCP activÇ. . . . . . . . . . . . . . : Non
+   Configuration automatique activÇe. . . : Oui
+   Adresse IPv6. . . . . . . . . . .ˇ. . .: fd7a:115c:a1e0::7a01:1887(prÇfÇrÇ) 
+   Adresse IPv6 de liaison locale. . . . .: fe80::c915:18de:49b0:fd02%12(prÇfÇrÇ) 
+   Adresse IPv4. . . . . . . . . . . . . .: 100.85.24.108(prÇfÇrÇ) 
+   Masque de sous-rÇseau. . . .ˇ. . . . . : 255.255.255.255
+   Passerelle par dÇfaut. . . .ˇ. . . . . : 
+   NetBIOS sur TCPIP. . . . . . . . . . . : DÇsactivÇ
+   Liste de recherche de suffixesˇDNS propres Ö la connexionˇ:
+	                               tail2ccaa0.ts.net
+
+Carte Ethernet vEthernet (Default Switch (Wi-Fi)) :
+
+   Statut du mÇdia. . . . . . . . . . . . : MÇdia dÇconnectÇ
+   Suffixe DNS propre Ö la connexion. . . : 
+   Description. . . . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter #3
+   Adresse physique . . . . . . . . . . . : 00-15-5D-DF-EF-A4
+   DHCP activÇ. . . . . . . . . . . . . . : Non
+   Configuration automatique activÇe. . . : Oui
+
+Carte Ethernet Ethernet 2 :
+
+   Suffixe DNS propre Ö la connexion. . . : 
+   Description. . . . . . . . . . . . . . : VirtualBox Host-Only Ethernet Adapter
+   Adresse physique . . . . . . . . . . . : 0A-00-27-00-00-11
+   DHCP activÇ. . . . . . . . . . . . . . : Non
+   Configuration automatique activÇe. . . : Oui
+   Adresse IPv6 de liaison locale. . . . .: fe80::137f:8369:9cdd:32d9%17(prÇfÇrÇ) 
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.56.1(prÇfÇrÇ) 
+   Masque de sous-rÇseau. . . .ˇ. . . . . : 255.255.255.0
+   Passerelle par dÇfaut. . . .ˇ. . . . . : 
+   IAID DHCPv6 . . . . . . . . . . . : 1007288359
+   DUID de client DHCPv6. . . . . . . . : 00-01-00-01-2A-BD-2D-2F-E8-84-A5-CB-80-EA
+   NetBIOS sur Tcpip. . . . . . . . . . . : ActivÇ
+
+Carte rÇseau sans fil Connexion au rÇseau local* 1ˇ:
+
+   Statut du mÇdia. . . . . . . . . . . . : MÇdia dÇconnectÇ
+   Suffixe DNS propre Ö la connexion. . . : 
+   Description. . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter
+   Adresse physique . . . . . . . . . . . : E8-84-A5-CB-80-EB
+   DHCP activÇ. . . . . . . . . . . . . . : Oui
+   Configuration automatique activÇe. . . : Oui
+
+Carte Ethernet VMware Network Adapter VMnet1 :
+
+   Suffixe DNS propre Ö la connexion. . . : 
+   Description. . . . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1
+   Adresse physique . . . . . . . . . . . : 00-50-56-C0-00-01
+   DHCP activÇ. . . . . . . . . . . . . . : Non
+   Configuration automatique activÇe. . . : Oui
+   Adresse IPv6 de liaison locale. . . . .: fe80::3f9e:49d2:a756:6c90%23(prÇfÇrÇ) 
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.31.1(prÇfÇrÇ) 
+   Masque de sous-rÇseau. . . .ˇ. . . . . : 255.255.255.0
+   Passerelle par dÇfaut. . . .ˇ. . . . . : 
+   IAID DHCPv6 . . . . . . . . . . . : 167792726
+   DUID de client DHCPv6. . . . . . . . : 00-01-00-01-2A-BD-2D-2F-E8-84-A5-CB-80-EA
+   NetBIOS sur Tcpip. . . . . . . . . . . : ActivÇ
+
+Carte Ethernet VMware Network Adapter VMnet8 :
+
+   Suffixe DNS propre Ö la connexion. . . : 
+   Description. . . . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet8
+   Adresse physique . . . . . . . . . . . : 00-50-56-C0-00-08
+   DHCP activÇ. . . . . . . . . . . .
+[+] === ACTIVE CONNECTIONS ===
+
+Connexions actives
+
+  Proto  Adresse locale         Adresse distante       êtat
+  TCP    0.0.0.0:22             0.0.0.0:0              LISTENING       8176
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       1840
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:554            0.0.0.0:0              LISTENING       14040
+  TCP    0.0.0.0:902            0.0.0.0:0              LISTENING       8416
+  TCP    0.0.0.0:912            0.0.0.0:0              LISTENING       8416
+  TCP    0.0.0.0:1462           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:2179           0.0.0.0:0              LISTENING       4652
+  TCP    0.0.0.0:2869           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:3389           0.0.0.0:0              LISTENING       2088
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING       17296
+  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:5432           0.0.0.0:0              LISTENING       10408
+  TCP    0.0.0.0:7070           0.0.0.0:0              LISTENING       7812
+  TCP    0.0.0.0:7250           0.0.0.0:0              LISTENING       26576
+  TCP    0.0.0.0:10243          0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       1480
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       1380
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       2500
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       4624
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       4812
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING       7592
+  TCP    0.0.0.0:49671          0.0.0.0:0              LISTENING       1452
+  TCP    0.0.0.0:54288          0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:58842          0.0.0.0:0              LISTENING       20560
+  TCP    0.0.0.0:58872          0.0.0.0:0              LISTENING       21864
+  TCP    0.0.0.0:64243          0.0.0.0:0              LISTENING       28892
+  TCP    100.85.24.108:32867    0.0.0.0:0              LISTENING       10948
+  TCP    100.85.24.108:55347    100.85.24.108:58842    TIME_WAIT       0
+  TCP    127.0.0.1:4444         0.0.0.0:0              LISTENING       34284
+  TCP    127.0.0.1:4444         127.0.0.1:55378        ESTABLISHED     34284
+  TCP    127.0.0.1:5353         0.0.0.0:0              LISTENING       30512
+  TCP    127.0.0.1:5353         127.0.0.1:55369        ESTABLISHED     30512
+  TCP    127.0.0.1:6327         0.0.0.0:0              LISTENING       16700
+  TCP    127.0.0.1:6327         127.0.0.1:52692        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59177        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59235        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59241        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59375        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59376        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59383        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:59385        ESTABLISHED     16700
+  TCP    127.0.0.1:6327         127.0.0.1:62306        ESTABLISHED     16700
+  TCP    127.0.0.1:6328         0.0.0.0:0              LISTENING       16700
+  TCP    127.0.0.1:7768         0.0.0.0:0              LISTENING       21864
+  TCP    127.0.0.1:7768         127.0.0.1:58977        ESTABLISHED     21864
+  TCP    127.0.0.1:9010         0.0.0.0:0              LISTENING       20644
+  TCP    127.0.0.1:9180         0.0.0.0:0              LISTENING       8068
+  TCP    127.0.0.1:14622        0.0.0.0:0              LISTENING       19348
+  TCP    127.0.0.1:14622        127.0.0.1:59351        ESTABLISHED     19348
+  TCP    127.0.0.1:18082        0.0.0.0:0              LISTENING       7904
+  TCP    127.0.0.1:32682        0.0.0.0:0              LISTENING       15284
+  TCP    127.0.0.1:45654        0.0.0.0:0             
+========================================
+   END OF REPORT
+========================================
