@@ -1,0 +1,108 @@
+========================================
+   SHADOWLINK RECONNAISSANCE REPORT
+========================================
+
+[+] === SYSTEM INFO ===
+[*] Commande executee (pas de sortie)
+
+[+] === CURRENT USER ===
+bd79c38b-fff2-4\wdagutilityaccount
+
+[+] === CURRENT DIRECTORY ===
+C:\Users\WDAGUtilityAccount\Documents
+
+[+] === DIRECTORY LISTING ===
+ Le volume dans le lecteur C n‚Äôa pas de nom.
+ Le num√©ro de s√©rie du volume est 028B-8893
+
+ R√©pertoire de C:\Users\WDAGUtilityAccount\Documents
+
+01/12/2025  18:13    <DIR>          .
+01/12/2025  18:05    <DIR>          ..
+01/12/2025  18:16           318‚ÄØ414 agent.exe
+               1 fichier(s)          318‚ÄØ414 octets
+               2 R√©p(s)  82‚ÄØ851‚ÄØ528‚ÄØ704 octets libres
+
+[+] === NETWORK CONFIG ===
+
+Configuration IP de Windows
+
+   Nom de l'hìte . . . . . . . . . . : bd79c38b-fff2-48c7-89e9-38fd80caa41c
+   Suffixe DNS principal . . . . . . : 
+   Type de noeud. . . . . . . . . .  : Mixte
+   Routage IP activÇ . . . . . . . . : Non
+   Proxy WINS activÇ . . . . . . . . : Non
+   Liste de recherche du suffixe DNS.: mshome.net
+
+Carte Ethernet Ethernet :
+
+   Suffixe DNS propre Ö la connexion. . . : mshome.net
+   Description. . . . . . . . . . . . . . : Microsoft Hyper-V Network Adapter
+   Adresse physique . . . . . . . . . . . : 00-15-5D-6B-FA-16
+   DHCP activÇ. . . . . . . . . . . . . . : Oui
+   Configuration automatique activÇe. . . : Oui
+   Adresse IPv6 de liaison locale. . . . .: fe80::aeae:cea4:4bb6:38b4%205(prÇfÇrÇ) 
+   Adresse IPv4. . . . . . . . . . . . . .: 192.168.169.82(prÇfÇrÇ) 
+   Masque de sous-rÇseau. . . .ˇ. . . . . : 255.255.240.0
+   Bail obtenu. . . . . . . . .ˇ. . . . . : lundi 1 dÇcembre 2025 18:08:01
+   Bail expirant. . . . . . . . .ˇ. . . . : mardi 2 dÇcembre 2025 18:08:00
+   Passerelle par dÇfaut. . . .ˇ. . . . . : 192.168.160.1
+   Serveur DHCP . . . . . . . . . . . . . : 192.168.160.1
+   IAID DHCPv6 . . . . . . . . . . . : -855632547
+   DUID de client DHCPv6. . . . . . . . : 00-01-00-01-30-BF-83-C9-00-15-5D-6B-FA-16
+   Serveurs DNS. . .  . . . . . . . . . . : 192.168.160.1
+   NetBIOS sur Tcpip. . . . . . . . . . . : ActivÇ
+
+[+] === ACTIVE CONNECTIONS ===
+
+Connexions actives
+
+  Proto  Adresse locale         Adresse distante       êtat
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       1292
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING       1724
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       1056
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       1012
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       1704
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       1476
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       2656
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING       1028
+  TCP    192.168.169.82:139     0.0.0.0:0              LISTENING       4
+  TCP    192.168.169.82:49686   98.66.133.185:443      ESTABLISHED     1476
+  TCP    192.168.169.82:49701   98.66.133.186:443      ESTABLISHED     1476
+  TCP    192.168.169.82:49741   192.168.160.1:4444     ESTABLISHED     3484
+  TCP    192.168.169.82:49742   20.190.160.64:443      ESTABLISHED     1476
+  TCP    [::]:135               [::]:0                 LISTENING       1292
+  TCP    [::]:445               [::]:0                 LISTENING       4
+  TCP    [::]:49664             [::]:0                 LISTENING       1056
+  TCP    [::]:49665             [::]:0                 LISTENING       1012
+  TCP    [::]:49666             [::]:0                 LISTENING       1704
+  TCP    [::]:49667             [::]:0                 LISTENING       1476
+  TCP    [::]:49668             [::]:0                 LISTENING       2656
+  TCP    [::]:49669             [::]:0                 LISTENING       1028
+  UDP    0.0.0.0:500            *:*                                    1476
+  UDP    0.0.0.0:4500           *:*                                    1476
+  UDP    0.0.0.0:5050           *:*                                    1724
+  UDP    0.0.0.0:5353           *:*                                    2192
+  UDP    0.0.0.0:5355           *:*                                    2192
+  UDP    0.0.0.0:53074          *:*                                    2192
+  UDP    127.0.0.1:1900         *:*                                    3400
+  UDP    127.0.0.1:49664        127.0.0.1:49664                        1476
+  UDP    127.0.0.1:59845        *:*                                    3400
+  UDP    192.168.169.82:137     *:*                                    4
+  UDP    192.168.169.82:138     *:*                                    4
+  UDP    192.168.169.82:1900    *:*                                    3400
+  UDP    192.168.169.82:59844   *:*                                    3400
+  UDP    [::]:500               *:*                                    1476
+  UDP    [::]:4500              *:*                                    1476
+  UDP    [::]:5353              *:*                                    2192
+  UDP    [::]:5355              *:*                                    2192
+  UDP    [::]:53074             *:*                                    2192
+  UDP    [::1]:1900             *:*                                    3400
+  UDP    [::1]:59843            *:*                                    3400
+  UDP    [fe80::aeae:cea4:4bb6:38b4%205]:1900  *:*                                    3400
+  UDP    [fe80::aeae:cea4:4bb6:38b4%205]:59842  *:*                                    3400
+
+========================================
+   END OF REPORT
+========================================

