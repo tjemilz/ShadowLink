@@ -1,0 +1,6 @@
+# ShadowLink Server Dependencies
+# Phase 1: Basic dependencies
+# Ajoutez d'autres dépendances au fur et à mesure
+
+# Pour les tests (optionnel pour Phase 1)
+pytest>=7.0.0
